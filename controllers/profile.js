@@ -114,6 +114,8 @@ const getUserHomeData = TryCatch(async (req, res, next) => {
             .populate('userId')
             .populate("Dogs")
             .exec();
+
+        console.log(user)
         return res.status(200).json({
             success: true,
             user,
