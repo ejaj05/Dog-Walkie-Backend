@@ -13,6 +13,8 @@ const addProfile = TryCatch(async (req, res, next) => {
     const { fullName, address, postCode, accountNumber, bsb, name } = req.body;
     const { id } = req.user
 
+    console.log(id)
+
     const user = await User.findById(id)
 
     if (!user) {
