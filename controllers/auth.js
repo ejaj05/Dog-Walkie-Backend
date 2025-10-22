@@ -62,7 +62,14 @@ const signup = TryCatch(async (req, res, next) => {
     const hashPassword = await bcrypt.hash(password, 10);
 
     const newUser = await User.create({ email, password: hashPassword, phoneNumber, role })
-    const token = signToken({ id: newUser._id, email, role }, process.env.JWT_SECRET);
+    const payload = {
+        id: newUser._id,
+        email,
+        role
+    }
+    const token = signToken(payload, process.env.JWT_SECRET);
+
+    console.log(token)
 
     return res.status(200).json({
         success: true,
