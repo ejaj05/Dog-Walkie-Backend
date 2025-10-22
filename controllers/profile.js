@@ -115,7 +115,6 @@ const getUserHomeData = TryCatch(async (req, res, next) => {
         user = await DogOwner.findOne({ userId: id })
             .populate('userId')
             .populate("Dogs")
-            .exec();
 
         console.log(user)
         return res.status(200).json({

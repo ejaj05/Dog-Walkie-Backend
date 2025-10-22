@@ -16,7 +16,7 @@ const dogOwnerSchema = new mongoose.Schema({
     profileImg: { type: String, required: true },
     idCard: { type: String, required: true },
     certificate: { type: String, required: true },
-    Dogs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Dogs" }],
+    Dogs: [{ type: mongoose.Schema.Types.ObjectId, ref: "dog" }],
 });
 
 const DogOwner = mongoose.model("DogOwner", dogOwnerSchema);
