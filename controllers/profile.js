@@ -109,6 +109,8 @@ const getUserHomeData = TryCatch(async (req, res, next) => {
 
     let user
 
+    console.log("Hello")
+
     if (role == "Dog Owner") {
         user = await DogOwner.findOne({ userId: id })
             .populate('userId')
