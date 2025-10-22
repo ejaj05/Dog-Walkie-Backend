@@ -24,6 +24,7 @@ app.use(cookieParser())
 
 
 app.get("/",(req,res)=>{
+    console.log("Hello World")
     res.send("Hello world")
 })
 
